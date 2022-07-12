@@ -1,5 +1,5 @@
 module "github_oidc_securityscan" {
-  source = "../.."  #"github.com/oozou/terraform-aws-github-oidc"
+  source = "../.."
   github_repositories=["oozou/terraform-aws-blueprint-guideline","oozou/terraform-aws-github-oidc"]
   is_create_securityscan_oicd_role=true
   is_create_oidc_provider=true
@@ -10,7 +10,7 @@ module "github_oidc_securityscan" {
 
 module "github_oidc_ecrpush" {
   depends_on = [module.github_oidc_securityscan]
-  source = "../.." #"github.com/oozou/terraform-aws-github-oidc"
+  source = "../.."
   github_repositories=["oozou/terraform-aws-github-oidc"]
   is_create_ecrpush_oicd_role=true
   is_create_oidc_provider=false
@@ -21,7 +21,7 @@ module "github_oidc_ecrpush" {
 
 module "github_oidc_custom" {
   depends_on = [module.github_oidc_securityscan]
-  source = "../.." #"github.com/oozou/terraform-aws-github-oidc"
+  source = "../.."
   custom_role_name_prefix="S3_ReadOnly"
   github_repositories=["oozou/terraform-aws-blueprint-guideline"]
   is_create_custom_oicd_role=true

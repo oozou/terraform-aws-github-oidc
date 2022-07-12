@@ -16,9 +16,9 @@
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_github_oidc"></a> [github\_oidc](#module\_github\_oidc) | ../.. | n/a |
 | <a name="module_github_oidc_custom"></a> [github\_oidc\_custom](#module\_github\_oidc\_custom) | ../.. | n/a |
 | <a name="module_github_oidc_ecrpush"></a> [github\_oidc\_ecrpush](#module\_github\_oidc\_ecrpush) | ../.. | n/a |
+| <a name="module_github_oidc_securityscan"></a> [github\_oidc\_securityscan](#module\_github\_oidc\_securityscan) | ../.. | n/a |
 
 ## Resources
 
