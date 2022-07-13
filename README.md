@@ -28,7 +28,7 @@ Terraform module to create a GitHub OIDC provider and the associated IAM roles. 
 ```terraform
 
 module "github_oidc_buildinRole" {
-  source = "github.com/oozou/terraform-aws-github-oidc"
+  source = "source = "git@github.com:oozou/terraform-aws-github-oidc.git?ref=<ref_id>"
   github_repositories=["oozou/terraform-aws-test1","oozou/terraform-aws-test2"]
   is_create_securityscan_oicd_role=true
   is_create_ecrpush_oicd_role=true
@@ -39,7 +39,7 @@ module "github_oidc_buildinRole" {
 
 module "github_oidc_custom" {
   depends_on = [module.github_oidc_buildinRole]
-  source = "github.com/oozou/terraform-aws-github-oidc"
+  source = "source = "git@github.com:oozou/terraform-aws-github-oidc.git?ref=<ref_id>"
   custom_role_name_prefix="S3_ReadOnly"
   github_repositories=["oozou/terraform-aws-xxx"]
   is_create_custom_oicd_role=true

@@ -22,14 +22,11 @@ module "github_oidc_ecrpush" {
 module "github_oidc_custom" {
   depends_on = [module.github_oidc_securityscan]
   source = "../.."
-  custom_role_name_prefix="S3_ReadOnly"
+  custom_role_name_prefix="Admin"
   github_repositories=["oozou/terraform-aws-blueprint-guideline"]
   is_create_custom_oicd_role=true
   is_create_oidc_provider=false
-  custom_role_iam_policy_arns=["arn:aws:iam::aws:policy/ReadOnlyAccess"]
-  custom_iam_role_inline_policies = {
-    "example_inline_policy" : data.aws_iam_policy_document.example.json
-  }
+  custom_role_iam_policy_arns=["arn:aws:iam::aws:policy/AdministratorAccess"]
   environment = "dev"
   prefix = "oozou-sandbox"
   
