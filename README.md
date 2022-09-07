@@ -91,9 +91,12 @@ No modules.
 | [aws_iam_openid_connect_provider.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_openid_connect_provider) | resource |
 | [aws_iam_role.custom](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
 | [aws_iam_role.ecrpush](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_iam_role.ecs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
 | [aws_iam_role.securityscan](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
 | [aws_iam_role_policy_attachment.custom](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [aws_iam_role_policy_attachment.ecr_poweruser](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
+| [aws_iam_role_policy_attachment.ecs_ecrpoweruser](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
+| [aws_iam_role_policy_attachment.ecs_fulladmin](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [aws_iam_role_policy_attachment.securityscan_ecr_readonly](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [aws_iam_role_policy_attachment.securityscan_readonly](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
 | [aws_iam_role_policy_attachment.securityscan_securityaudit](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
@@ -111,6 +114,8 @@ No modules.
 | <a name="input_ecr_poweruser_policy_arn"></a> [ecr\_poweruser\_policy\_arn](#input\_ecr\_poweruser\_policy\_arn) | AWS built in ECR PowerUser access policy arn | `string` | `"arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPowerUser"` | no |
 | <a name="input_ecr_readonly_policy_arn"></a> [ecr\_readonly\_policy\_arn](#input\_ecr\_readonly\_policy\_arn) | AWS built in ECR readonly access policy arn | `string` | `"arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"` | no |
 | <a name="input_ecrpush_role_name_prefix"></a> [ecrpush\_role\_name\_prefix](#input\_ecrpush\_role\_name\_prefix) | IAM role name to be <role\_name>-GithubOIDCRole | `string` | `"ECR_ReadWrite"` | no |
+| <a name="input_ecs_fullaccess_policy_arn"></a> [ecs\_fullaccess\_policy\_arn](#input\_ecs\_fullaccess\_policy\_arn) | AWS built in ECS full access policy arn | `string` | `"arn:aws:iam::aws:policy/AmazonECS_FullAccess"` | no |
+| <a name="input_ecs_role_name_prefix"></a> [ecs\_role\_name\_prefix](#input\_ecs\_role\_name\_prefix) | IAM role name to be <role\_name>-GithubOIDCRole | `string` | `"ECS_FullAccess"` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment Variable used as a prefix | `string` | n/a | yes |
 | <a name="input_force_detach_policies"></a> [force\_detach\_policies](#input\_force\_detach\_policies) | Flag to force detachment of policies attached to the IAM role. | `string` | `false` | no |
 | <a name="input_github_actions_oidc_url"></a> [github\_actions\_oidc\_url](#input\_github\_actions\_oidc\_url) | The URL to use for the OIDC handshake | `string` | `"https://token.actions.githubusercontent.com"` | no |
@@ -120,6 +125,7 @@ No modules.
 | <a name="input_iam_role_permissions_boundary"></a> [iam\_role\_permissions\_boundary](#input\_iam\_role\_permissions\_boundary) | ARN of the permissions boundary to be used by the IAM role. | `string` | `""` | no |
 | <a name="input_is_create_custom_oicd_role"></a> [is\_create\_custom\_oicd\_role](#input\_is\_create\_custom\_oicd\_role) | Whether to create custom oidc role | `bool` | `false` | no |
 | <a name="input_is_create_ecrpush_oicd_role"></a> [is\_create\_ecrpush\_oicd\_role](#input\_is\_create\_ecrpush\_oicd\_role) | Whether to create ecr readwrite oidc role | `bool` | `false` | no |
+| <a name="input_is_create_ecs_oicd_role"></a> [is\_create\_ecs\_oicd\_role](#input\_is\_create\_ecs\_oicd\_role) | Whether to create ecs full access oidc role | `bool` | `false` | no |
 | <a name="input_is_create_github_oidc"></a> [is\_create\_github\_oidc](#input\_is\_create\_github\_oidc) | Flag to enable/disable the creation of GitHub OIDC resources. | `bool` | `true` | no |
 | <a name="input_is_create_oidc_provider"></a> [is\_create\_oidc\_provider](#input\_is\_create\_oidc\_provider) | Flag to enable/disable the creation of the GitHub OIDC provider. | `bool` | `true` | no |
 | <a name="input_is_create_securityscan_oicd_role"></a> [is\_create\_securityscan\_oicd\_role](#input\_is\_create\_securityscan\_oicd\_role) | Whether to create securityscan oidc role | `bool` | `false` | no |

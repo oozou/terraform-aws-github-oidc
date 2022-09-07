@@ -5,6 +5,7 @@ locals {
 
   securityscan_role_name = format("%s-%s-%s-%s", var.prefix, upper(var.environment), var.securityscan_role_name_prefix, var.role_name_suffix)
   ecrpush_role_name = format("%s-%s-%s-%s", var.prefix, upper(var.environment), var.ecrpush_role_name_prefix, var.role_name_suffix)
+  ecs_role_name = format("%s-%s-%s-%s", var.prefix, upper(var.environment), var.ecs_role_name_prefix, var.role_name_suffix)
   custom_role_name  =  format("%s-%s-%s-%s", var.prefix, upper(var.environment), var.custom_role_name_prefix, var.role_name_suffix)
   
   github_organizations = [for repo in var.github_repositories : split("/", repo)[0]]

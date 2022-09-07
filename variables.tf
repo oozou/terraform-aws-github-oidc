@@ -94,6 +94,12 @@ variable "ecr_poweruser_policy_arn" {
   default     = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPowerUser"
 }
 
+variable "ecs_fullaccess_policy_arn" {
+  description = "AWS built in ECS full access policy arn"
+  type        = string
+  default     = "arn:aws:iam::aws:policy/AmazonECS_FullAccess"
+}
+
 
 /* -------------------------------------------------------------------------- */
 /*                            SHARED_ROLE_VARIABLES                           */
@@ -192,4 +198,20 @@ variable "ecrpush_role_name_prefix" {
   description = "IAM role name to be <role_name>-GithubOIDCRole"
   type        = string
   default     = "ECR_ReadWrite"
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                             ECS_OIDC_ROLE                            */
+/* -------------------------------------------------------------------------- */
+variable "is_create_ecs_oicd_role" {
+  description = "Whether to create ecs full access oidc role"
+  type        = bool
+  default     = false
+}
+
+variable "ecs_role_name_prefix" {
+  description = "IAM role name to be <role_name>-GithubOIDCRole"
+  type        = string
+  default     = "ECS_FullAccess"
 }
