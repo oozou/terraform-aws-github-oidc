@@ -9,6 +9,9 @@ example/
 ### Terraform ###
 # Local .terraform directories
 **/.terraform/*
+**/.terraform.lock*
+examples/test/*
+
 
 # .tfstate files
 *.tfstate
